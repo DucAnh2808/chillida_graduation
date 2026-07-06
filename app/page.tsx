@@ -1,5 +1,6 @@
 import Image from "next/image";
 import AudioPlayer from "./audio-player";
+import ScrollReveal from "./scroll-reveal";
 
 const gallery = [
   { src: "/images/IMG_0160.JPG", alt: "Anh tot nghiep Nguyen Nhat Chi" },
@@ -12,27 +13,28 @@ const gallery = [
 
 export default function Home() {
   return (
-    <main className="min-h-screen overflow-hidden bg-[#fff7fa] text-[#3c2530]">
+    <ScrollReveal>
+    <main className="min-h-screen overflow-x-hidden bg-[#fff7fa] text-[#3c2530]">
       <AudioPlayer />
 
-      <section className="relative grid min-h-screen items-center px-5 py-8 sm:px-8 lg:grid-cols-[1.05fr_0.95fr] lg:px-16">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_12%_12%,rgba(255,188,211,0.42),transparent_28%),linear-gradient(135deg,#fff7fa_0%,#ffe4ee_48%,#ffffff_100%)]" />
-        <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-col gap-10 lg:flex-row lg:items-center">
-          <div className="max-w-2xl pt-16 lg:pt-0">
-            <p className="mb-5 inline-flex rounded-full border border-[#e6a3b8] bg-white/70 px-4 py-2 text-sm font-semibold uppercase tracking-[0.18em] text-[#9b4664] shadow-sm">
+      <section className="relative grid min-h-[100svh] items-center px-4 pb-24 pt-8 sm:px-8 sm:py-10 lg:px-16 lg:py-12">
+        <div className="absolute inset-0 bg-[linear-gradient(135deg,#fff7fa_0%,#ffe4ee_46%,#f7fbf6_100%)]" />
+        <div className="relative z-10 mx-auto grid w-full max-w-7xl gap-8 lg:grid-cols-[minmax(0,1.02fr)_minmax(360px,0.98fr)] lg:items-center lg:gap-14">
+          <div className="max-w-2xl" data-reveal="left">
+            <p className="mb-4 inline-flex max-w-full rounded-full border border-[#e6a3b8] bg-white/75 px-3 py-2 text-[0.68rem] font-semibold uppercase tracking-[0.14em] text-[#9b4664] shadow-sm sm:px-4 sm:text-sm sm:tracking-[0.18em]">
               Graduation Invitation
             </p>
-            <h1 className="text-5xl font-semibold leading-[1.02] text-[#7c2446] sm:text-7xl lg:text-8xl">
+            <h1 className="text-[clamp(2.85rem,14vw,5rem)] font-semibold leading-[1.02] text-[#7c2446] sm:text-7xl lg:text-8xl">
               Nguyen
               <span className="block text-[#c94678]">Nhat Chi</span>
             </h1>
-            <p className="mt-6 max-w-xl text-lg leading-8 text-[#6f4b59] sm:text-xl">
+            <p className="mt-5 max-w-xl text-base leading-7 text-[#6f4b59] sm:mt-6 sm:text-xl sm:leading-8">
               Tran trong kinh moi ban den chung vui trong ngay tot nghiep dai
               hoc nganh Marketing, danh dau mot hanh trinh ruc ro va mot chuong
               moi day cam hung.
             </p>
 
-            <div className="mt-8 grid max-w-xl gap-3 sm:grid-cols-3">
+            <div className="mt-7 grid max-w-xl gap-3 min-[520px]:grid-cols-3 sm:mt-8">
               {[
                 ["Ngay", "28.06.2026"],
                 ["Thoi gian", "09:00 AM"],
@@ -45,22 +47,22 @@ export default function Home() {
                   <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#b45b78]">
                     {label}
                   </p>
-                  <p className="mt-2 text-lg font-semibold text-[#4a2835]">
+                  <p className="mt-2 text-base font-semibold text-[#4a2835] sm:text-lg">
                     {value}
                   </p>
                 </div>
               ))}
             </div>
 
-            <div className="mt-8 flex flex-wrap gap-3">
+            <div className="mt-7 grid gap-3 min-[420px]:flex min-[420px]:flex-wrap sm:mt-8">
               <a
-                className="rounded-full bg-[#c94678] px-6 py-3 text-sm font-bold uppercase tracking-[0.08em] text-white shadow-[0_14px_30px_rgba(201,70,120,0.32)] transition hover:bg-[#ab2f5f]"
+                className="inline-flex min-h-12 items-center justify-center rounded-full bg-[#c94678] px-5 py-3 text-center text-sm font-bold uppercase tracking-[0.08em] text-white shadow-[0_14px_30px_rgba(201,70,120,0.32)] transition hover:bg-[#ab2f5f] sm:px-6"
                 href="#rsvp"
               >
                 Xac nhan tham du
               </a>
               <a
-                className="rounded-full border border-[#d87c9d] bg-white/70 px-6 py-3 text-sm font-bold uppercase tracking-[0.08em] text-[#8e3558] transition hover:bg-white"
+                className="inline-flex min-h-12 items-center justify-center rounded-full border border-[#d87c9d] bg-white/70 px-5 py-3 text-center text-sm font-bold uppercase tracking-[0.08em] text-[#8e3558] transition hover:bg-white sm:px-6"
                 href="#gallery"
               >
                 Xem anh
@@ -68,10 +70,8 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="relative mx-auto w-full max-w-[560px]">
-            <div className="absolute -left-4 top-10 h-32 w-32 rounded-full border border-[#e5a3b8]" />
-            <div className="absolute -right-3 bottom-12 h-44 w-44 rounded-full bg-[#ffd3e0]/65 blur-2xl" />
-            <div className="relative aspect-[4/5] overflow-hidden rounded-[28px] border-[10px] border-white bg-white shadow-[0_35px_90px_rgba(126,36,70,0.24)]">
+          <div className="relative mx-auto w-full max-w-[560px] lg:ml-auto" data-reveal="right">
+            <div className="relative aspect-[4/5] max-h-[68svh] min-h-[360px] overflow-hidden rounded-[20px] border-[7px] border-white bg-white shadow-[0_30px_78px_rgba(126,36,70,0.22)] sm:rounded-[28px] sm:border-[10px]">
               <Image
                 src="/images/IMG_0160.JPG"
                 alt="Nguyen Nhat Chi trong bo anh tot nghiep"
@@ -80,28 +80,28 @@ export default function Home() {
                 sizes="(min-width: 1024px) 46vw, 92vw"
                 className="object-cover"
               />
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#4f1d34]/78 to-transparent p-6 pt-24 text-white">
-                <p className="text-sm font-semibold uppercase tracking-[0.18em]">
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#4f1d34]/78 to-transparent p-5 pt-20 text-white sm:p-6 sm:pt-24">
+                <p className="text-xs font-semibold uppercase tracking-[0.16em] sm:text-sm sm:tracking-[0.18em]">
                   Marketing Graduate
                 </p>
-                <p className="mt-2 text-2xl font-semibold">Class of 2026</p>
+                <p className="mt-2 text-xl font-semibold sm:text-2xl">Class of 2026</p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="bg-white px-5 py-20 sm:px-8 lg:px-16">
-        <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
-          <div>
+      <section className="bg-white px-4 py-14 sm:px-8 sm:py-20 lg:px-16">
+        <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-start lg:gap-12">
+          <div data-reveal="left">
             <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#c94678]">
               The Big Day
             </p>
-            <h2 className="mt-3 text-4xl font-semibold text-[#63223c] sm:text-5xl">
+            <h2 className="mt-3 text-3xl font-semibold leading-tight text-[#63223c] sm:text-5xl">
               Mot loi moi nhe nhang cho ngay that dac biet.
             </h2>
           </div>
-          <div className="grid gap-5 sm:grid-cols-2">
+          <div className="grid gap-4 sm:grid-cols-2 sm:gap-5">
             {[
               ["Dress code", "Trang phuc lich su, uu tien tong trang, hong, be hoac pastel."],
               ["Loi nhan", "Su hien dien cua ban la mon qua y nghia nhat voi Chi trong ngay nay."],
@@ -109,7 +109,8 @@ export default function Home() {
               ["Chu de", "Pink Marketing Glam voi cam hung tu mot chien dich thanh cong ruc ro."],
             ].map(([title, copy]) => (
               <article
-                className="rounded-lg border border-[#f4d3de] bg-[#fff7fa] p-6"
+                className="rounded-lg border border-[#f4d3de] bg-[#fff7fa] p-5 sm:p-6"
+                data-reveal="up"
                 key={title}
               >
                 <h3 className="text-xl font-semibold text-[#7c2446]">{title}</h3>
@@ -121,16 +122,19 @@ export default function Home() {
       </section>
 
       <section
-        className="bg-[#fff7fa] px-5 py-20 sm:px-8 lg:px-16"
+        className="bg-[#fff7fa] px-4 py-14 sm:px-8 sm:py-20 lg:px-16"
         id="gallery"
       >
         <div className="mx-auto max-w-7xl">
-          <div className="mb-10 flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
+          <div
+            className="mb-8 flex flex-col justify-between gap-4 sm:mb-10 sm:flex-row sm:items-end"
+            data-reveal="up"
+          >
             <div>
               <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#c94678]">
                 Gallery
               </p>
-              <h2 className="mt-3 text-4xl font-semibold text-[#63223c]">
+              <h2 className="mt-3 text-3xl font-semibold text-[#63223c] sm:text-4xl">
                 Pink memories
               </h2>
             </div>
@@ -140,12 +144,13 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid auto-rows-[260px] gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid auto-rows-[220px] gap-4 min-[520px]:grid-cols-2 sm:auto-rows-[260px] lg:grid-cols-3">
             {gallery.map((item, index) => (
               <figure
-                className={`relative overflow-hidden rounded-xl bg-[#f8dce6] shadow-[0_18px_45px_rgba(126,36,70,0.12)] ${
-                  index === 0 || index === 3 ? "sm:row-span-2" : ""
+                className={`relative overflow-hidden rounded-lg bg-[#f8dce6] shadow-[0_18px_45px_rgba(126,36,70,0.12)] sm:rounded-xl ${
+                  index === 0 || index === 3 ? "min-[520px]:row-span-2" : ""
                 }`}
+                data-reveal="zoom"
                 key={item.alt}
               >
                 <Image
@@ -161,22 +166,25 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-white px-5 py-20 sm:px-8 lg:px-16" id="rsvp">
-        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-center">
-          <div>
+      <section className="bg-white px-4 py-14 sm:px-8 sm:py-20 lg:px-16" id="rsvp">
+        <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.92fr_1.08fr] lg:items-center lg:gap-10">
+          <div data-reveal="left">
             <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#c94678]">
               RSVP
             </p>
-            <h2 className="mt-3 text-4xl font-semibold text-[#63223c] sm:text-5xl">
+            <h2 className="mt-3 text-3xl font-semibold leading-tight text-[#63223c] sm:text-5xl">
               Hen gap ban tai le tot nghiep cua Chi.
             </h2>
-            <p className="mt-5 max-w-xl text-lg leading-8 text-[#765361]">
+            <p className="mt-5 max-w-xl text-base leading-7 text-[#765361] sm:text-lg sm:leading-8">
               De Chi chuan bi chu dao hon, ban co the de lai thong tin tham du
               va mot loi chuc nho tai day.
             </p>
           </div>
 
-          <form className="rounded-2xl border border-[#f1cad7] bg-[#fff7fa] p-6 shadow-[0_25px_70px_rgba(126,36,70,0.12)] sm:p-8">
+          <form
+            className="rounded-lg border border-[#f1cad7] bg-[#fff7fa] p-5 shadow-[0_25px_70px_rgba(126,36,70,0.12)] sm:p-8"
+            data-reveal="right"
+          >
             <div className="grid gap-5 sm:grid-cols-2">
               <label className="block">
                 <span className="text-sm font-semibold text-[#7c2446]">
@@ -232,5 +240,6 @@ export default function Home() {
         </div>
       </section>
     </main>
+    </ScrollReveal>
   );
 }
