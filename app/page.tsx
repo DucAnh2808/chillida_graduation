@@ -1,6 +1,5 @@
 import Image from "next/image";
 import AudioPlayer from "./audio-player";
-import ScrollReveal from "./scroll-reveal";
 
 const gallery = [
   { src: "/images/IMG_0160.JPG", alt: "Anh tot nghiep Nguyen Nhat Chi" },
@@ -13,14 +12,13 @@ const gallery = [
 
 export default function Home() {
   return (
-    <ScrollReveal>
-    <main className="min-h-screen overflow-x-hidden bg-[#fff7fa] text-[#3c2530]">
+    <main className="min-h-screen overflow-x-hidden text-[#3c2530]">
       <AudioPlayer />
 
       <section className="relative grid min-h-[100svh] items-center px-4 pb-24 pt-8 sm:px-8 sm:py-10 lg:px-16 lg:py-12">
-        <div className="absolute inset-0 bg-[linear-gradient(135deg,#fff7fa_0%,#ffe4ee_46%,#f7fbf6_100%)]" />
+        <div className="absolute inset-0 bg-white/28" />
         <div className="relative z-10 mx-auto grid w-full max-w-7xl gap-8 lg:grid-cols-[minmax(0,1.02fr)_minmax(360px,0.98fr)] lg:items-center lg:gap-14">
-          <div className="max-w-2xl" data-reveal="left">
+          <div className="max-w-2xl">
             <p className="mb-4 inline-flex max-w-full rounded-full border border-[#e6a3b8] bg-white/75 px-3 py-2 text-[0.68rem] font-semibold uppercase tracking-[0.14em] text-[#9b4664] shadow-sm sm:px-4 sm:text-sm sm:tracking-[0.18em]">
               Graduation Invitation
             </p>
@@ -70,10 +68,10 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="relative mx-auto w-full max-w-[560px] lg:ml-auto" data-reveal="right">
-            <div className="relative aspect-[4/5] max-h-[68svh] min-h-[360px] overflow-hidden rounded-[20px] border-[7px] border-white bg-white shadow-[0_30px_78px_rgba(126,36,70,0.22)] sm:rounded-[28px] sm:border-[10px]">
+          <div className="relative mx-auto w-full max-w-[560px] lg:ml-auto">
+            <div className="relative aspect-[3/5] max-h-[68svh] min-h-[360px] overflow-hidden rounded-[20px] bg-white sm:rounded-[28px]">
               <Image
-                src="/images/IMG_0160.JPG"
+                src="/images/certificate.png"
                 alt="Nguyen Nhat Chi trong bo anh tot nghiep"
                 fill
                 priority
@@ -91,14 +89,15 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-white px-4 py-14 sm:px-8 sm:py-20 lg:px-16">
-        <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-start lg:gap-12">
-          <div data-reveal="left">
+      <section className="relative overflow-hidden bg-[url('/images/background.png')] bg-cover bg-center bg-no-repeat px-4 py-14 sm:px-8 sm:py-20 lg:px-16">
+        <div className="absolute inset-0 bg-white/62" />
+        <div className="relative z-10 mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-start lg:gap-12">
+          <div>
             <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#c94678]">
               The Big Day
             </p>
             <h2 className="mt-3 text-3xl font-semibold leading-tight text-[#63223c] sm:text-5xl">
-              Mot loi moi nhe nhang cho ngay that dac biet.
+              Một lời mời nhẹ nhàng cho ngày thật đặc biệt
             </h2>
           </div>
           <div className="grid gap-4 sm:grid-cols-2 sm:gap-5">
@@ -109,8 +108,7 @@ export default function Home() {
               ["Chu de", "Pink Marketing Glam voi cam hung tu mot chien dich thanh cong ruc ro."],
             ].map(([title, copy]) => (
               <article
-                className="rounded-lg border border-[#f4d3de] bg-[#fff7fa] p-5 sm:p-6"
-                data-reveal="up"
+                className="rounded-lg border border-white/75 bg-white/108 p-5 backdrop-blur sm:p-6"
                 key={title}
               >
                 <h3 className="text-xl font-semibold text-[#7c2446]">{title}</h3>
@@ -122,14 +120,12 @@ export default function Home() {
       </section>
 
       <section
-        className="bg-[#fff7fa] px-4 py-14 sm:px-8 sm:py-20 lg:px-16"
+        className="relative overflow-hidden bg-[url('/images/background.png')] bg-cover bg-center bg-no-repeat px-4 py-14 sm:px-8 sm:py-20 lg:px-16"
         id="gallery"
       >
-        <div className="mx-auto max-w-7xl">
-          <div
-            className="mb-8 flex flex-col justify-between gap-4 sm:mb-10 sm:flex-row sm:items-end"
-            data-reveal="up"
-          >
+        <div className="absolute inset-0 bg-white/38" />
+        <div className="relative z-10 mx-auto max-w-7xl">
+          <div className="mb-8 flex flex-col justify-between gap-4 sm:mb-10 sm:flex-row sm:items-end">
             <div>
               <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#c94678]">
                 Gallery
@@ -138,19 +134,14 @@ export default function Home() {
                 Pink memories
               </h2>
             </div>
-            <p className="max-w-md leading-7 text-[#765361]">
-              Anh duoc lay tu bo anh trong thu muc <span className="font-semibold">images</span>
-              va duoc dua vao public de Next.js phuc vu tren web.
-            </p>
           </div>
 
           <div className="grid auto-rows-[220px] gap-4 min-[520px]:grid-cols-2 sm:auto-rows-[260px] lg:grid-cols-3">
             {gallery.map((item, index) => (
               <figure
-                className={`relative overflow-hidden rounded-lg bg-[#f8dce6] shadow-[0_18px_45px_rgba(126,36,70,0.12)] sm:rounded-xl ${
+                className={`relative overflow-hidden rounded-lg bg-white/70 shadow-[0_18px_45px_rgba(60,37,48,0.1)] sm:rounded-xl ${
                   index === 0 || index === 3 ? "min-[520px]:row-span-2" : ""
                 }`}
-                data-reveal="zoom"
                 key={item.alt}
               >
                 <Image
@@ -166,80 +157,19 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-white px-4 py-14 sm:px-8 sm:py-20 lg:px-16" id="rsvp">
-        <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.92fr_1.08fr] lg:items-center lg:gap-10">
-          <div data-reveal="left">
-            <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#c94678]">
-              RSVP
-            </p>
+      <section
+        className="relative overflow-hidden bg-[url('/images/background.png')] bg-cover bg-center bg-no-repeat px-4 py-14 sm:px-8 sm:py-20 lg:px-16"
+        id="rsvp"
+      >
+        <div className="absolute inset-0 bg-white/62" />
+        <div className="relative z-10 mx-auto max-w-7xl">
+          <div>
             <h2 className="mt-3 text-3xl font-semibold leading-tight text-[#63223c] sm:text-5xl">
-              Hen gap ban tai le tot nghiep cua Chi.
+              Hẹn gặp bạn tại lễ tốt nghiệp của Chi
             </h2>
-            <p className="mt-5 max-w-xl text-base leading-7 text-[#765361] sm:text-lg sm:leading-8">
-              De Chi chuan bi chu dao hon, ban co the de lai thong tin tham du
-              va mot loi chuc nho tai day.
-            </p>
           </div>
-
-          <form
-            className="rounded-lg border border-[#f1cad7] bg-[#fff7fa] p-5 shadow-[0_25px_70px_rgba(126,36,70,0.12)] sm:p-8"
-            data-reveal="right"
-          >
-            <div className="grid gap-5 sm:grid-cols-2">
-              <label className="block">
-                <span className="text-sm font-semibold text-[#7c2446]">
-                  Ten cua ban
-                </span>
-                <input
-                  className="mt-2 h-12 w-full rounded-lg border border-[#edc2d2] bg-white px-4 text-[#3c2530] outline-none transition focus:border-[#c94678] focus:ring-4 focus:ring-[#ffd8e5]"
-                  placeholder="Vi du: Minh Anh"
-                  type="text"
-                />
-              </label>
-              <label className="block">
-                <span className="text-sm font-semibold text-[#7c2446]">
-                  So khach
-                </span>
-                <input
-                  className="mt-2 h-12 w-full rounded-lg border border-[#edc2d2] bg-white px-4 text-[#3c2530] outline-none transition focus:border-[#c94678] focus:ring-4 focus:ring-[#ffd8e5]"
-                  min="1"
-                  placeholder="1"
-                  type="number"
-                />
-              </label>
-            </div>
-
-            <label className="mt-5 block">
-              <span className="text-sm font-semibold text-[#7c2446]">
-                Ban co tham du khong?
-              </span>
-              <select className="mt-2 h-12 w-full rounded-lg border border-[#edc2d2] bg-white px-4 text-[#3c2530] outline-none transition focus:border-[#c94678] focus:ring-4 focus:ring-[#ffd8e5]">
-                <option>Co, minh se den chung vui</option>
-                <option>Minh se bao lai sau</option>
-                <option>Tiec qua, minh khong tham du duoc</option>
-              </select>
-            </label>
-
-            <label className="mt-5 block">
-              <span className="text-sm font-semibold text-[#7c2446]">
-                Loi chuc cho Chi
-              </span>
-              <textarea
-                className="mt-2 min-h-32 w-full resize-none rounded-lg border border-[#edc2d2] bg-white px-4 py-3 text-[#3c2530] outline-none transition focus:border-[#c94678] focus:ring-4 focus:ring-[#ffd8e5]"
-                placeholder="Viet loi chuc cua ban..."
-              />
-            </label>
-
-            <button
-              className="mt-6 h-12 w-full rounded-full bg-[#c94678] px-6 text-sm font-bold uppercase tracking-[0.08em] text-white shadow-[0_14px_30px_rgba(201,70,120,0.26)] transition hover:bg-[#ab2f5f]"
-              type="button"
-            >
-              Gui loi xac nhan
-            </button>
-          </form>
         </div>
       </section>
     </main>
-    </ScrollReveal>
   );
 }

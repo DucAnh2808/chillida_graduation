@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #fff7fa;
+  --background: #ffffff;
   --foreground: #3c2530;
 }
 
@@ -13,7 +13,12 @@
 }
 
 body {
-  background: var(--background);
+  /* use a base page color and render the background image underneath content */
+  background-color: var(--background);
+  background-image: url('/images/background.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -23,8 +28,8 @@ html {
 }
 
 ::selection {
-  background: #ffd3e0;
-  color: #63223c;
+  background: #ffffff;
+  color: #2f2f2f;
 }
 
 [data-reveal] {
