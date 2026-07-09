@@ -16,7 +16,7 @@ export default function RootLayout({
       lang="vi"
       className="h-full antialiased"
     >
-      <body className="min-h-full flex flex-col bg-[url('/images/background.png')] bg-cover bg-center bg-fixed bg-[#fff7fa] text-[#3c2530]">
+      <body className="min-h-full flex flex-col bg-[#fff7fa] text-[#3c2530]">
         {children}
       </body>
     </html>

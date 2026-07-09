@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1152" height="2048" viewBox="0 0 1152 2048">
+  <defs>
+    <filter id="linen-texture" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9 0.045" numOctaves="4" seed="16" result="verticalNoise"/>
+      <feColorMatrix in="verticalNoise" type="matrix" values="
+        0 0 0 0 0.72
+        0 0 0 0 0.70
+        0 0 0 0 0.66
+        0 0 0 0.22 0" result="verticalThreads"/>
+      <feTurbulence type="fractalNoise" baseFrequency="0.055 0.75" numOctaves="3" seed="27" result="horizontalNoise"/>
+      <feColorMatrix in="horizontalNoise" type="matrix" values="
+        0 0 0 0 0.78
+        0 0 0 0 0.76
+        0 0 0 0 0.70
+        0 0 0 0.12 0" result="horizontalThreads"/>
+      <feBlend in="verticalThreads" in2="horizontalThreads" mode="multiply" result="woven"/>
+      <feGaussianBlur in="woven" stdDeviation="0.22" result="softWoven"/>
+      <feBlend in="SourceGraphic" in2="softWoven" mode="multiply"/>
+    </filter>
+
+    <linearGradient id="paperWarmth" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#faf9f4"/>
+      <stop offset="0.45" stop-color="#f1eee6"/>
+      <stop offset="1" stop-color="#fbfaf6"/>
+    </linearGradient>
+
+    <pattern id="fineThreads" width="12" height="12" patternUnits="userSpaceOnUse">
+      <path d="M1 0V12M5 0V12M9 0V12" stroke="#d9d5cb" stroke-width="0.55" opacity="0.32"/>
+      <path d="M0 2H12M0 7H12" stroke="#ffffff" stroke-width="0.55" opacity="0.45"/>
+    </pattern>
+  </defs>
+
+  <rect width="1152" height="2048" fill="url(#paperWarmth)"/>
+  <rect width="1152" height="2048" fill="url(#fineThreads)" opacity="0.58"/>
+  <rect width="1152" height="2048" filter="url(#linen-texture)" fill="#f7f5ee" opacity="0.92"/>
+  <rect width="1152" height="2048" fill="#ffffff" opacity="0.18"/>
+</svg>

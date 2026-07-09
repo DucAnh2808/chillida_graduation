@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="890" height="600" viewBox="0 0 890 600">
+  <defs>
+    <linearGradient id="ivory" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f8f6ee"/>
+      <stop offset="0.48" stop-color="#eee9db"/>
+      <stop offset="1" stop-color="#fbfaf4"/>
+    </linearGradient>
+
+    <filter id="raised" x="-15%" y="-15%" width="130%" height="130%" color-interpolation-filters="sRGB">
+      <feDropShadow dx="-1.6" dy="-1.6" stdDeviation="1.1" flood-color="#ffffff" flood-opacity="0.88"/>
+      <feDropShadow dx="1.8" dy="2" stdDeviation="1.2" flood-color="#cfc7b6" flood-opacity="0.5"/>
+    </filter>
+
+    <filter id="grain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.72" numOctaves="4" seed="8"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="table" tableValues="0 0.16"/>
+      </feComponentTransfer>
+    </filter>
+
+    <pattern id="damask" width="178" height="120" patternUnits="userSpaceOnUse">
+      <g fill="none" stroke="#d6cfbf" stroke-width="1.35" opacity="0.42" filter="url(#raised)">
+        <path d="M89 18c-22 12-30 29-19 42 8 9 24 8 29-5 4-10-6-19-16-14"/>
+        <path d="M89 18c22 12 30 29 19 42-8 9-24 8-29-5-4-10 6-19 16-14"/>
+        <path d="M89 102c-22-12-30-29-19-42 8-9 24-8 29 5 4 10-6 19-16 14"/>
+        <path d="M89 102c22-12 30-29 19-42-8-9-24-8-29 5-4 10 6 19 16 14"/>
+        <path d="M35 60c20-12 29-6 35 0-6 6-15 12-35 0Z"/>
+        <path d="M143 60c-20-12-29-6-35 0 6 6 15 12 35 0Z"/>
+        <path d="M89 36v48M66 60h46"/>
+      </g>
+    </pattern>
+
+    <g id="cornerFlourish" fill="none" stroke="#d1c9b8" stroke-linecap="round" stroke-linejoin="round" filter="url(#raised)">
+      <path d="M22 84c22-41 63-61 111-58 34 2 55 18 55 39 0 20-22 32-40 22-14-8-10-28 4-31"/>
+      <path d="M40 124c29-50 76-71 128-65"/>
+      <path d="M27 31c49 16 81 45 98 88"/>
+      <path d="M80 36c-19 16-25 34-18 54 7 19 23 28 43 27"/>
+      <path d="M35 171c28-34 63-51 105-52 25 0 44 11 49 29 4 15-9 31-26 29-13-2-18-17-8-25"/>
+      <path d="M15 221c32-44 79-70 140-76"/>
+      <path d="M71 151c-4 26 7 45 35 56"/>
+      <path d="M117 26c-9 22-5 41 13 57"/>
+      <path d="M23 69c18-4 31 2 38 18"/>
+      <path d="M50 203c17-8 32-6 45 8"/>
+      <path d="M142 108c15-8 30-7 44 4"/>
+      <path d="M104 66c16-13 34-17 54-11"/>
+      <path d="M11 17c15 4 28 12 40 24"/>
+      <path d="M16 246c19-15 39-23 61-25"/>
+    </g>
+
+    <g id="leafSpray" fill="#efece3" stroke="#cfc7b6" stroke-width="1" filter="url(#raised)">
+      <path d="M0 0c18-12 34-15 48-8C32 4 17 7 0 0Z"/>
+      <path d="M31 15c18-9 33-8 45 2-17 8-32 8-45-2Z"/>
+      <path d="M59 37c19-5 33-1 43 11-17 5-31 1-43-11Z"/>
+      <path d="M88 62c17-1 29 5 36 18-16 1-28-5-36-18Z"/>
+    </g>
+  </defs>
+
+  <rect width="890" height="600" fill="url(#ivory)"/>
+  <rect width="890" height="600" fill="#ffffff" opacity="0.34"/>
+  <rect width="890" height="600" filter="url(#grain)" opacity="0.45"/>
+
+  <rect x="18" y="16" width="854" height="568" rx="2" fill="none" stroke="#d8d1c2" stroke-width="3" filter="url(#raised)"/>
+  <rect x="30" y="29" width="830" height="542" fill="none" stroke="#f7f4ec" stroke-width="6"/>
+  <rect x="45" y="43" width="800" height="514" fill="none" stroke="#d1c9b8" stroke-width="1.5" opacity="0.72"/>
+
+  <rect x="158" y="126" width="574" height="348" fill="url(#damask)" opacity="0.75"/>
+  <rect x="190" y="104" width="510" height="18" fill="none" stroke="#d2cab9" stroke-width="2" filter="url(#raised)"/>
+  <path d="M208 93h474l28 15H180Z" fill="#eee9dd" stroke="#d2cab9" stroke-width="1.2" filter="url(#raised)" opacity="0.85"/>
+  <rect x="190" y="478" width="510" height="18" fill="none" stroke="#d2cab9" stroke-width="2" filter="url(#raised)"/>
+  <path d="M208 507h474l28-15H180Z" fill="#eee9dd" stroke="#d2cab9" stroke-width="1.2" filter="url(#raised)" opacity="0.85"/>
+
+  <g stroke-width="2.2" opacity="0.9">
+    <use href="#cornerFlourish" x="24" y="28"/>
+    <use href="#cornerFlourish" x="866" y="28" transform="scale(-1 1)"/>
+    <use href="#cornerFlourish" x="24" y="572" transform="scale(1 -1)"/>
+    <use href="#cornerFlourish" x="866" y="572" transform="scale(-1 -1)"/>
+  </g>
+
+  <g opacity="0.72">
+    <use href="#leafSpray" x="118" y="42"/>
+    <use href="#leafSpray" x="772" y="42" transform="scale(-1 1)"/>
+    <use href="#leafSpray" x="118" y="558" transform="scale(1 -1)"/>
+    <use href="#leafSpray" x="772" y="558" transform="scale(-1 -1)"/>
+  </g>
+
+  <g fill="none" stroke="#d5cebe" stroke-width="1.1" opacity="0.62" filter="url(#raised)">
+    <path d="M70 65h750M70 535h750"/>
+    <path d="M72 83h746M72 517h746"/>
+    <path d="M62 72v456M828 72v456"/>
+    <path d="M80 88v424M810 88v424"/>
+    <path d="M242 107c25 11 43 11 68 0M580 107c25 11 43 11 68 0"/>
+    <path d="M242 493c25-11 43-11 68 0M580 493c25-11 43-11 68 0"/>
+  </g>
+
+  <rect x="0" y="0" width="890" height="600" fill="#fffdf8" opacity="0.18"/>
+</svg>
