@@ -83,7 +83,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="relative mx-auto mt-6 w-full max-w-[1680px] lg:-ml-20 lg:mr-0 lg:mt-0">
+          <div className="relative mx-auto mt-32 w-full max-w-[1680px] sm:mt-20 md:mt-10 lg:-ml-20 lg:mr-0 lg:mt-0">
             <Image
               src="/images/back_2.svg"
               alt="Nguyen Nhat Chi trong bo anh tot nghiep"
@@ -92,7 +92,7 @@ export default function Home() {
               priority
               unoptimized
               sizes="(min-width: 1024px) 58vw, 95vw"
-              className="relative left-1/2 h-auto w-[218vw] max-w-none -translate-x-1/2 sm:w-[158vw] md:w-[128vw] lg:left-auto lg:w-full lg:translate-x-0 lg:scale-[2.48]"
+              className="h-auto w-full -translate-x-4 scale-[2.28] sm:-translate-x-3 md:-translate-x-2 lg:translate-x-0 lg:scale-[2.48]"
             />
           </div>
         </div>
