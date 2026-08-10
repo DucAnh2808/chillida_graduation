@@ -3,6 +3,7 @@ import { join } from "node:path";
 import Image from "next/image";
 import { The_Nautigal } from "next/font/google";
 import AudioPlayer from "./audio-player";
+import driveMemories from "./drive-memories.json";
 
 const theNautigal = The_Nautigal({
   subsets: ["latin", "latin-ext", "vietnamese"],
@@ -20,6 +21,11 @@ const gallery = readdirSync(join(process.cwd(), "public/images"))
       alt: `Anh tot nghiep Nguyen Nhat Chi ${photoNumber}`,
     };
   });
+
+const memories = driveMemories.map((item) => ({
+  src: `https://lh3.googleusercontent.com/d/${item.id}=w1200`,
+  alt: item.alt,
+}));
 
 export default function Home() {
   return (
@@ -161,12 +167,38 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-[url('/images/ornate-reference-background.png')] bg-cover bg-center bg-no-repeat px-4 py-14 sm:px-8 sm:py-20 lg:px-16">
+      <section
+        className="relative overflow-hidden bg-[url('/images/ornate-reference-background.png')] bg-cover bg-center bg-no-repeat px-4 py-14 sm:px-8 sm:py-20 lg:px-16"
+        id="memories"
+      >
         <div className="absolute inset-0 bg-white/44" />
-        <div className="relative z-10 mx-auto max-w-5xl py-10 text-center sm:py-16">
-          <h2 className="text-3xl font-bold leading-tight text-[#681436] sm:text-5xl">
-            Sau ngày lễ t sẽ ném hết mấy ảnh xinh của chúng mình vào đây nhie &lt;33
-          </h2>
+        <div className="relative z-10 mx-auto max-w-7xl">
+          <div className="mb-8 text-center sm:mb-10">
+            <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#c94678]">
+              Kỷ niệm sau lễ
+            </p>
+            <h2 className="mt-3 text-3xl font-bold leading-tight text-[#681436] sm:text-5xl">
+              Mấy ảnh xinh của chúng mình đây rồi &lt;33
+            </h2>
+          </div>
+
+          <div className="grid gap-4 min-[520px]:grid-cols-2 lg:grid-cols-3">
+            {memories.map((item) => (
+              <figure
+                className="relative aspect-[4/5] overflow-hidden rounded-lg border border-white/80 bg-[#fffaf4]/90 shadow-[0_18px_45px_rgba(60,37,48,0.1)] sm:rounded-xl"
+                key={item.src}
+              >
+                <Image
+                  src={item.src}
+                  alt={item.alt}
+                  fill
+                  unoptimized
+                  sizes="(min-width: 1024px) 32vw, (min-width: 640px) 48vw, 92vw"
+                  className="object-cover transition duration-500 hover:scale-[1.02]"
+                />
+              </figure>
+            ))}
+          </div>
         </div>
       </section>
 
